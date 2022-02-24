@@ -3,7 +3,7 @@ import numpy as np
 import telegram
 
 telegram_token = "5299852358:AAHne7CII-uH4x8Vk1xOkAZQjAeMMtCUti"
-telegram_chat_id = 5012920181
+telegram_chat_id = 501292018
 bot = telegram.Bot(token = telegram_token)
 
 def get_ror(k=0.5):
