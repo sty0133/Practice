@@ -2,7 +2,7 @@ import pyupbit
 import numpy as np
 import telegram
 
-telegram_token = "5299852358:AAHne7CII-uH4x8Vk1xOkAZQjAeMMtCUti4"
+telegram_token = "5299852358:AAHne7CII-uH4x8Vk1xOkAZQjAeMMtCUti"
 telegram_chat_id = 5012920181
 bot = telegram.Bot(token = telegram_token)
 
