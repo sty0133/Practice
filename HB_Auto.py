@@ -78,11 +78,11 @@ while True:
                 total_profit = ((afkrw / start_balance) - 1) * 100
                 now_profit = ((afkrw / krw) - 1) * 100
                 if krw > afkrw:
-                    lose =+ 1
+                    lose += 1
                     winrate = (win / (win + lose)) * 100
                     bot.sendMessage(chat_id = telegram_chat_id, text = "매도 완료.\n거래 전 잔고: %.1f  원\n거래 후 잔고: %.1f 원\n최근거래 수익률: %.2f %%\n총 수익률: %.1f %%\n승 : %d , 패 : %d\n승률: %.2f %%" % (krw, afkrw, now_profit, total_profit, win, lose, winrate))
                 if krw < afkrw:
-                    win =+ 1
+                    win += 1
                     winrate = (win / (win + lose)) * 100
                     bot.sendMessage(chat_id = telegram_chat_id, text = "매도 완료.\n거래 전 잔고: %.1f  원\n거래 후 잔고: %.1f 원\n최근거래 수익률: %.2f %%\n총 수익률: %.1f %%\n승 : %d , 패 : %d\n승률: %.2f %%" % (krw, afkrw, now_profit, total_profit, win, lose, winrate))
         time.sleep(1)
