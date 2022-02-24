@@ -66,12 +66,14 @@ while True:
             if target_price < current_price and ma15 < current_price:
                 krw = get_balance("KRW")
                 if krw > 5000:
-                    upbit.buy_market_order("KRW-BTC", krw)
-                    bot.sendMessage(chat_id = telegram_chat_id, text = "매수 완료.\n현재 잔고: %.1f 원" % krw)
+                    upbit.buy_market_order("KRW-BTC", krw*0.9995)
+                    krwa = get_balance("KRW")
+                    if krwa < krw:
+                        bot.sendMessage(chat_id = telegram_chat_id, text = "매수 완료.\n목표금액 %.1f 원 " % target_price)
         else:
             btc = get_balance("BTC")
             if btc > 0.00015:
-                upbit.sell_market_order("KRW-BTC", btc)
+                upbit.sell_market_order("KRW-BTC", btc*0.9995)
                 afkrw = get_balance("KRW")
                 total_profit = ((afkrw / start_balance) - 1) * 100
                 now_profit = ((afkrw / krw) - 1) * 100
