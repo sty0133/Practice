@@ -12,10 +12,7 @@ session = InstaPy(username=username, password=password,
                   multi_logs=True)
 
 with smart_run(session):
-    session.like_by_tags(["programming"], amount=1) 
     session.set_ignore_if_contains(['sex', 'second', 'account', '부계정', 'bot', '팔로우'])
-    session.set_do_follow(enabled=True, percentage=r.randint(50, 80), times=1)
-    
     session.set_quota_supervisor(enabled=True,
                             sleep_after=["likes", "follows", "unfollows"],
                             sleepyhead=True,
@@ -50,6 +47,7 @@ with smart_run(session):
                            randomize=True,
                            random_range_from=70,
                            random_range_to=140)
-session.end()
-print("Session End")
-        
+    session.like_by_tags(["programming"], amount=1) 
+    session.set_do_follow(enabled=True, percentage=r.randint(50, 80), times=1)
+    session.end()
+    print("Session End")
